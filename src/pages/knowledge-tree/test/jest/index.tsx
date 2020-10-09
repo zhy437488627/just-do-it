@@ -1,18 +1,31 @@
-import { Button, Result } from 'antd';
 import React from 'react';
-import { history } from 'umi';
+import { PageContainer } from '@ant-design/pro-layout';
+import { Card, Alert, Typography } from 'antd';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
-const NoFoundPage: React.FC<{}> = () => (
-  <Result
-    status="404"
-    title="404"
-    subTitle="Sorry, the page you visited does not exist."
-    extra={
-      <Button type="primary" onClick={() => history.push('/')}>
-        Back Home
-      </Button>
-    }
-  />
+// const CodePreview: React.FC<{}> = ({ children }) => (
+//   <pre className={styles.pre}>
+//     <code>
+//       <Typography.Text copyable>{children}</Typography.Text>
+//     </code>
+//   </pre>
+// );
+const packageJson = {
+  'script': {
+  'test': 'jest',
+}}
+export default (): React.ReactNode => (
+  <PageContainer>
+    <Card title="Default size card" extra={<a href="#">More</a>} style={{ width: 300 }}>
+      <p>Card content</p>
+      <p>Card content</p>
+      <p>Card content</p>
+    </Card>
+    <Card title="Small size card" extra={<a href="#">More</a>} style={{ width: 300 }}>
+      <p>Card content</p>
+      <p>Card content</p>
+      <p>Card content</p>
+    </Card>
+  </PageContainer>
 );
-
-export default NoFoundPage;
