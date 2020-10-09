@@ -44,7 +44,7 @@ export default defineConfig({
         {
           path: '/',
           component: '../layouts/BasicLayout',
-          authority: ['admin', 'user'],
+          // authority: ['admin', 'user'],
           routes: [
             {
               path: '/',
@@ -62,24 +62,24 @@ export default defineConfig({
               icon: "crown",
               routes: [
                 {
-                  path: "/compatibility",
+                  path: "/brower/compatibility",
                   name: "compatibility",
                   icon: "smile",
                   component: "knowledge-tree/brower/compatibility"
                 },
                 {
-                  path: "/headless-brower",
+                  path: "/brower/headless-brower",
                   name: "headless-brower",
                   icon: "smile",
                   component: "knowledge-tree/brower/headless-brower"
                 },
                 {
-                  path: "/how-brower-work",
+                  path: "/brower/how-brower-work",
                   name: "how-brower-work",
                   icon: "smile",
                   component: "knowledge-tree/brower/how-brower-work"
                 }, {
-                  path: "/webview",
+                  path: "/brower/webview",
                   name: "webview",
                   icon: "smile",
                   component: "knowledge-tree/brower/webview"
@@ -91,34 +91,34 @@ export default defineConfig({
               name: "build-tools",
               icon: "crown",
               routes: [{
-                path: "/auto-build",
+                path: "/build-tools/auto-build",
                 name: "auto-build",
                 icon: "crown",
                 routes: [{
-                  path: "/npm",
+                  path: "/build-tools/auto-build/npm",
                   name: "npm",
                   icon: "smile",
                   component: "knowledge-tree/build-tools/auto-build/npm"
                 },
                 {
-                  path: "/gulp",
+                  path: "/build-tools/auto-build/gulp",
                   name: "gulp",
                   icon: "smile",
                   component: "knowledge-tree/build-tools/auto-build/gulp"
                 }],
               },
               {
-                path: "/module-build",
+                path: "/build-tools/module-build",
                 name: "module-build",
                 icon: "crown",
                 routes: [{
-                  path: "/roll-up",
+                  path: "/build-tools/module-build/roll-up",
                   name: "roll-up",
                   icon: "smile",
                   component: "knowledge-tree/build-tools/module-build/roll-up"
                 },
                 {
-                  path: "/webpack",
+                  path: "/build-tools/module-build/webpack",
                   name: "webpack",
                   icon: "smile",
                   component: "knowledge-tree/build-tools/module-build/webpack"
@@ -131,28 +131,28 @@ export default defineConfig({
               name: "code-quality",
               icon: "crown",
               routes: [{
-                path: "/coding-specification",
+                path: "/code-quality/coding-specification",
                 name: "coding-specification",
                 icon: "crown",
                 routes: [{
-                  path: "/css-style",
+                  path: "/code-quality/coding-specification/css-style",
                   name: "css-style",
                   icon: "smile",
                   component: "knowledge-tree/code-quality/coding-specification/css-style"
                 },
                 {
-                  path: "/javascript-style",
+                  path: "/code-quality/coding-specification/javascript-style",
                   name: "javascript-style",
                   icon: "smile",
                   component: "knowledge-tree/code-quality/coding-specification/javascript-style"
                 }],
               }, {
-                path: "/inter&formatter",
+                path: "/code-quality/inter&formatter",
                 name: "inter&formatter",
                 icon: "crown",
                 routes: [
                   {
-                    path: "/eslint",
+                    path: "/code-quality/inter&formatter/eslint",
                     name: "eslint",
                     icon: "smile",
                     component: "knowledge-tree/code-quality/inter&formatter/eslint"
@@ -160,11 +160,11 @@ export default defineConfig({
                 ],
               },
               {
-                path: "/type-verification",
+                path: "/code-quality/type-verification",
                 name: "type-verification",
                 icon: "crown",
                 routes: [{
-                  path: "/typescript",
+                  path: "/code-quality/type-verification/typescript",
                   name: "typescript",
                   icon: "smile",
                   component: "knowledge-tree/code-quality/type-verification/typescript"
@@ -176,65 +176,47 @@ export default defineConfig({
               name: "css",
               icon: "crown",
               routes: [{
-                path: "/css-frame",
+                path: "/css/css-frame",
                 name: "css-frame",
                 icon: "crown",
                 routes: [
                   {
-                    path: "/antd",
+                    path: "/css/css-frame/antd",
                     name: "antd",
                     icon: "smile",
                     component: "knowledge-tree/css/css-frame/antd"
                   },
                   {
-                    path: "/element-ui",
+                    path: "/css/css-frame/element-ui",
                     name: "element-ui",
                     icon: "smile",
                     component: "knowledge-tree/css/css-frame/element-ui"
                   },
                 ],
               }, {
-                path: "/css-optimization",
-                name: "css-optimization",
-                icon: "crown",
-                routes: [
-                  {
-                    path: "/antd",
-                    name: "antd",
-                    icon: "smile",
-                    component: "knowledge-tree/css/css-frame/antd"
-                  },
-                  {
-                    path: "/element-ui",
-                    name: "element-ui",
-                    icon: "smile",
-                    component: "knowledge-tree/css/css-frame/element-ui"
-                  },
-                ],
-              }, {
-                path: "/css-optimization",
+                path: "/css/css-optimization",
                 name: "css-optimization",
                 icon: "smile",
                 component: "knowledge-tree/css/css-optimization"
               }, {
-                path: "/css-retreatment",
+                path: "/css/css-retreatment",
                 name: "css-retreatment",
                 icon: "crown",
                 routes: [
                   {
-                    path: "/less",
+                    path: "/css/css-retreatment/less",
                     name: "less",
                     icon: "smile",
                     component: "knowledge-tree/css/css-retreatment/less"
                   },
                   {
-                    path: "/sass",
+                    path: "/css/css-retreatment/sass",
                     name: "sass",
                     icon: "smile",
                     component: "knowledge-tree/css/css-retreatment/sass"
                   },
                   {
-                    path: "/stylus",
+                    path: "/css/css-retreatment/stylus",
                     name: "stylus",
                     icon: "smile",
                     component: "knowledge-tree/css/css-retreatment/stylus"
@@ -242,18 +224,18 @@ export default defineConfig({
                 ],
               },
               {
-                path: "/grammer",
+                path: "/css/grammer",
                 name: "grammer",
                 icon: "smile",
                 component: "knowledge-tree/css/grammer"
               },
               {
-                path: "/layout",
+                path: "/css/layout",
                 name: "layout",
                 icon: "smile",
                 component: "knowledge-tree/css/layout"
               }, {
-                path: "/Responsive",
+                path: "/css/Responsive",
                 name: "Responsive",
                 icon: "smile",
                 component: "knowledge-tree/css/Responsive"
@@ -264,27 +246,27 @@ export default defineConfig({
               icon: "crown",
               routes: [
                 {
-                  path: "/antv",
+                  path: "/data-visualization/antv",
                   name: "antv",
                   icon: "smile",
                   routes: [{
-                    path: "/g2",
+                    path: "/data-visualization/antv/g2",
                     name: "g2",
                     icon: "smile",
                     component: "knowledge-tree/data-visualization/antv/g2"
                   }, {
-                    path: "/g2plot",
+                    path: "/data-visualization/antv/g2plot",
                     name: "g2plot",
                     icon: "smile",
                     component: "knowledge-tree/data-visualization/antv/g2plot"
                   },]
                 }, {
-                  path: "/echarts",
+                  path: "/data-visualization/echarts",
                   name: "echarts",
                   icon: "smile",
                   component: "knowledge-tree/data-visualization/echarts"
                 }, {
-                  path: "/highchart",
+                  path: "/data-visualization/highchart",
                   name: "highchart",
                   icon: "smile",
                   component: "knowledge-tree/data-visualization/highchart"
@@ -297,12 +279,12 @@ export default defineConfig({
               icon: "crown",
               routes: [
                 {
-                  path: "/grammer",
+                  path: "/git/grammer",
                   name: "grammer",
                   icon: "smile",
                   component: "knowledge-tree/git/grammer"
                 }, {
-                  path: "/sourcetree",
+                  path: "/git/sourcetree",
                   name: "sourcetree",
                   icon: "smile",
                   component: "knowledge-tree/git/sourcetree"
@@ -313,19 +295,19 @@ export default defineConfig({
               icon: "crown",
               routes: [
                 {
-                  path: "/form",
+                  path: "/html/form",
                   name: "form",
                   icon: "smile",
                   component: "knowledge-tree/html/form"
                 },
                 {
-                  path: "/label",
+                  path: "/html/label",
                   name: "label",
                   icon: "smile",
                   component: "knowledge-tree/html/label"
                 },
                 {
-                  path: "/seo",
+                  path: "/html/seo",
                   name: "seo",
                   icon: "smile",
                   component: "knowledge-tree/html/seo"
@@ -337,37 +319,37 @@ export default defineConfig({
               icon: 'crown',
               routes: [
                 {
-                  path: "/algorithm",
+                  path: "/javascript/algorithm",
                   name: "algorithm",
                   icon: "smile",
                   component: "knowledge-tree/javascript/algorithm"
                 },
                 {
-                  path: "/data-type",
+                  path: "/javascript/data-type",
                   name: "data-type",
                   icon: "smile",
                   component: "knowledge-tree/javascript/data-type"
                 },
                 {
-                  path: "/event",
+                  path: "/javascript/event",
                   name: "event",
                   icon: "smile",
                   component: "knowledge-tree/javascript/event"
                 },
                 {
-                  path: "/function",
+                  path: "/javascript/function",
                   name: "function",
                   icon: "smile",
                   component: "knowledge-tree/javascript/function"
                 },
                 {
-                  path: "/json",
+                  path: "/javascript/json",
                   name: "json",
                   icon: "smile",
                   component: "knowledge-tree/javascript/json"
                 },
                 {
-                  path: "/variable",
+                  path: "/javascript/variable",
                   name: "variable",
                   icon: "smile",
                   component: "knowledge-tree/javascript/variable"
@@ -379,25 +361,25 @@ export default defineConfig({
               icon: 'crown',
               routes: [
                 {
-                  path: "/cdn",
+                  path: "/network-knowledge/cdn",
                   name: "cdn",
                   icon: "smile",
                   component: "knowledge-tree/network-knowledge/cdn"
                 },
                 {
-                  path: "/dns",
+                  path: "/network-knowledge/dns",
                   name: "dns",
                   icon: "smile",
                   component: "knowledge-tree/network-knowledge/dns"
                 },
                 {
-                  path: "/how-net-work",
+                  path: "/network-knowledge/how-net-work",
                   name: "how-net-work",
                   icon: "smile",
                   component: "knowledge-tree/network-knowledge/how-net-work"
                 },
                 {
-                  path: "/http",
+                  path: "/network-knowledge/http",
                   name: "http&&https",
                   icon: "smile",
                   component: "knowledge-tree/network-knowledge/http"
@@ -410,13 +392,13 @@ export default defineConfig({
               icon: 'crown',
               routes: [
                 {
-                  path: "/grammer",
+                  path: "/node/grammer",
                   name: "grammer",
                   icon: "smile",
                   component: "knowledge-tree/node/grammer"
                 },
                 {
-                  path: "/node-modules",
+                  path: "/node/node-modules",
                   name: "node-modules",
                   icon: "smile",
                   component: "knowledge-tree/node/node-modules"
@@ -428,25 +410,25 @@ export default defineConfig({
               icon: 'crown',
               routes: [
                 {
-                  path: "/fcp",
+                  path: "/performance/fcp",
                   name: "fcp",
                   icon: "smile",
                   component: "knowledge-tree/performance/fcp"
                 },
                 {
-                  path: "/fmp",
+                  path: "/performance/fmp",
                   name: "fmp",
                   icon: "smile",
                   component: "knowledge-tree/performance/fmp"
                 },
                 {
-                  path: "/fp",
+                  path: "/performance/fp",
                   name: "fp",
                   icon: "smile",
                   component: "knowledge-tree/performance/fp"
                 },
                 {
-                  path: "/tti",
+                  path: "/performance/tti",
                   name: "tti",
                   icon: "smile",
                   component: "knowledge-tree/performance/tti"
@@ -458,81 +440,81 @@ export default defineConfig({
               icon: 'crown',
               routes: [
                 {
-                  path: "/next-js-react",
+                  path: "/ssr/next-js-react",
                   name: "next-js-react",
                   icon: "smile",
                   component: "knowledge-tree/ssr/next-js-react"
                 },
                 {
-                  path: "/nuxt-js-vue",
+                  path: "/ssr/nuxt-js-vue",
                   name: "nuxt-js-vue",
                   icon: "smile",
                   component: "knowledge-tree/ssr/nuxt-js-vue"
                 },
               ],
-            },{
+            }, {
               path: "/static-site-construction",
-    name: "static-site-construction",
+              name: "static-site-construction",
               icon: 'crown',
               routes: [
                 {
-                  path: "/gassbyjs",
+                  path: "/static-site-construction/gassbyjs",
                   name: "gassbyjs",
                   icon: "smile",
                   component: "knowledge-tree/static-site-construction/gassbyjs"
                 },
                 {
-                  path: "/vuepress",
+                  path: "/static-site-construction/vuepress",
                   name: "vuepress",
                   icon: "smile",
                   component: "knowledge-tree/static-site-construction/vuepress"
                 },
               ],
-            },{
+            }, {
               path: "/test",
-    name: "test",
+              name: "test",
               icon: 'crown',
               routes: [{
-                path: "/e2e",
+                path: "/test/e2e",
                 name: "e2e",
                 icon: "smile",
                 component: "knowledge-tree/test/e2e"
               },
               {
-                path: "/enzyme",
+                path: "/test/enzyme",
                 name: "enzyme",
                 icon: "smile",
                 component: "knowledge-tree/test/enzyme"
               },
               {
-                path: "/integration-testing",
+                path: "/test/integration-testing",
                 name: "integration-testing",
                 icon: "smile",
                 component: "knowledge-tree/test/integration-testing"
               },
               {
-                path: "/unit-testing",
+                path: "/test/unit-testing",
                 name: "unit-testing",
                 icon: "smile",
                 component: "knowledge-tree/test/unit-testing"
-              },{
-                path: "/jest",
+              }, {
+                path: "/test/jest",
                 name: "jest",
                 icon: "smile",
                 component: "knowledge-tree/test/jest"
               },
               ],
-            },{
+            }, {
               path: "/vscode",
-    name: "vscode",
-    icon: "crown",
-    component: "knowledge-tree/vscode"
+              name: "vscode",
+              icon: "crown",
+              component: "./knowledge-tree/vscode"
             },
             {
               path: "/webassembly",
               name: "webassembly",
               icon: "crown",
-              component: "knowledge-tree/webassembly"
+              component: "./knowledge-tree/webassembly"
             },
             {
               path: '/admin',
