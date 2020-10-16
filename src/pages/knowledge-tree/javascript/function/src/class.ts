@@ -72,3 +72,31 @@ class Dog extends Animal{
         return this.name
     }
 }
+// 抽象类 abstract 抽象类无法实例化
+abstract class Animal {
+    public name: string;
+
+    constructor(name: string) {
+        this.name = name
+    }
+
+    abstract eat(): any;
+}
+class Dog extends Animal {
+    protected name: string;
+
+    // eslint-disable-next-line @typescript-eslint/no-useless-constructor
+    constructor(name: string) {
+        super(name)
+    }
+
+    // eslint-disable-next-line class-methods-use-this
+    eat() {
+        console.log('吃');
+    }
+}
+// 1.属性接口 对json的约束
+function printLabel(label: string) {
+    console.log(label);
+    
+}
