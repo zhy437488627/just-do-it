@@ -28,3 +28,19 @@ function WebNext() {
     console.log('原型链继承可以继承构造函数里的熟悉和方法, 也可以继承原型链上的属性和方法');
 }
 WebNext.prototype = new Person()
+/**
+ * 类的封装
+ */
+function $() {
+    returnew base(element);
+}
+function base(element) {
+    this.element = element;
+    this.css = function (arr,value) {
+        this.element.style.arr = value
+    }
+}
+$('#box').css('color', 'red')
+$.length('url', function () {
+    
+})
