@@ -1,12 +1,12 @@
-import React, { ReactChild, ReactElement, ReactText, DetailedReactHTMLElement } from 'react'
+import React, { ReactChild, ReactElement, ReactText, DOMAttributes DetailedReactHTMLElement } from 'react'
 import ReactDOM from 'react-dom'
 
 interface Props {
     className: string
 }
 
-
 type ReactText = string | number 
+
 interface ReactElement<P = any, T extends string = string> {
     type: T,
     props: P,
@@ -27,6 +27,15 @@ function createElement<P extends DOMAttributes<T>, T extends Element>(
     ...children: ReactNode[]): DOMElement<P, T>;
 const props: Props = {
     className: 'title'
-}
+} 
 const element: DetailedReactHTMLElement<Props, HTMLHeadingElement> = React.createElement<Props, HTMLHeadingElement>('h1', props, 'hello')
 ReactDOM.render(element, document.getElementById('root'))
+
+// 如何定义函数组件
+function Hello(props: Props) {
+    return React.createElement<Props, HTMLHeadingElement>('h1', props, 'hello')
+}
+let element2: DetailedReactHTMLElement<Props, HTMLHeadingElement> = (
+    React.createElement<Props, HTMLHeadingElement>(Hello, props, 'hello')
+)
+ReactDOM.render(element2, document.getElementById('root'))

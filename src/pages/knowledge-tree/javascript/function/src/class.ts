@@ -309,5 +309,5 @@ interface ConfigFnFX2<T> {
 function getData2<T>(value:T):T {
     return value
 }
-const setDataFX2:ConfigFnFX2<number> = getData2
+const setDataFX2: ConfigFnFX2<number> = getData2
 setDataFX2(2)
