@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = [1,1,1,2,2,3]
+const removeDuplicates = function(nums) {
+    let i=0; let j=2
+    debugger
+    while(j<nums.length-1) {
+        if(nums[i] === nums[j]){
+            for(x = j;x<nums.length-1; x++) {
+                nums[x] = nums[x+1]
+            }
+            nums.pop()
+        } else {
+            i++
+            j++
+        }
+    }
+    return nums
+    };
+    console.log(removeDuplicates(a));
+    </script>
+</body>
+</html>

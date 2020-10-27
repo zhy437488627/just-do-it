@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="throttle">节流</div>
+    <script>
+        window.onload = function () {
+            let dom = document.getElementById('throttle')
+            
+            function clickDiv(e) {
+                console.log(e);
+            }
+            function throttle(fn, wait) {
+                let timer, previous = 0, remaining, context, args
+                const later = function () {
+                    previous = +new Date()
+                    timer = null
+                    fn.apply(context, args)
+                }
+                const throttle = function () {
+                    context = this
+                    args = arguments
+                    let now = +new Date()
+                    remaining = wait - (now - previous)
+                    if(remaining <= 0 || remaining > wait) {
+                        if (timer) {
+                            clearTimeout(timer)
+                            timer = null
+                        }
+                        previous = now
+                        fn.apply(context, args)
+                    } else if(!timer) {
+                        timer = setTimeout(later, remaining)
+                    }
+                }
+                return throttle
+            }
+         dom.onclick = throttle(clickDiv, 2000, true)
+        }
+    </script>
+</body>
+</html>

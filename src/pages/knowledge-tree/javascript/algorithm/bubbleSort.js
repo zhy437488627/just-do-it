@@ -13,3 +13,26 @@ function bubbleSort(arr) {
     }
     return arr
 }
+function bubbleSort(arr) {
+    for (let i = 0; i < arr.length-1; i++) {
+        for (let j = 0; j < arr.length-i-1; j++) {
+            if(arr[j] > arr[j+1]) {
+                [arr[j], arr[j+1]] = [arr[j+1], arr[j]]
+            }
+        }
+    }
+    return arr
+}
+const removeDuplicates = function(nums) {
+    let i=0; let j=2
+    while(j<nums.length-1) {
+        if(nums[i] === nums[j]){
+            for(x = j;x<nums.length-1; x++) {
+    
+            }
+        } else {
+            i++
+            j++
+        }
+    }
+    };

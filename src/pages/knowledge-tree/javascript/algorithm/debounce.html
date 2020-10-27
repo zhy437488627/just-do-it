@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="debounce">防抖</div>
+    <script>
+        window.onload = function () {
+            let dom = document.getElementById('debounce')
+            
+            function clickDiv(e) {
+                console.log(e);
+            }
+            // function debounce(fn, wait, immdiate) {
+            //     let result, timer
+            //     const debounce = function () {
+            //         const context = this
+            //         const args = arguments
+            //         if(timer) clearTimeout(timer)
+            //         if(immdiate) {
+            //             let callNow = !timer
+            //             timer = setTimeout(() => {
+            //                 timer = null
+            //             }, wait)
+            //             if(callNow) result = fn.apply(context, args)
+            //         } else {
+            //             timer = setTimeout(() => {
+            //                 fn.apply(context, args)
+            //             }, wait)
+            //         }
+            //         return result
+            //     }
+            //     debounce.cancle = function () {
+            //         if (timer) {
+            //             clearTimeout(timer)
+            //             timer = null
+            //         }
+            //     }
+            //     return debounce
+            // }
+            function debounce(fn, wait, immdiate) {
+                let timer, result
+                const debounce = function () {
+                    let context = this
+                    let args = arguments
+                    if(timer) clearTimeout(timer)
+                    if (immdiate) {
+                        callNow = !timer
+                        timer = setTimeout(() => {
+                            timer = null
+                        }, wait)
+                        if(callNow) result = fn.apply(context, args)
+                    } else {
+                        timer = setTimeout(() => {
+                            fn.apply(context, args)
+                        }, wait)
+                    }
+                    return result
+                }
+                debounce.cancle = function () {
+                    if (timer) {
+                        clearTimeout(timer)
+                        timer = null
+                    }
+                }
+                return debounce
+            }
+            dom.onclick = debounce(clickDiv, 2000, true)
+        }
+    </script>
+</body>
+</html>
