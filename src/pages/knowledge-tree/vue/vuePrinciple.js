@@ -100,7 +100,51 @@ Vue.prototype._init = function(options) {
     vm.$createElement = (a, b, c, d) => createElement(vm, a, b, c, d, true)  // 转化手写的
     ...
   }
-
+   function initInjections(vm) {
+    const result = resolveInject(vm.$options.inject, vm) // 找结果
+    if(result) { // 如果有结果
+        toggleObserving(false)  // 刻意为之不被响应式
+        Object.keys(result).forEach(key => {
+          ...
+          defineReactive(vm, key, result[key])
+        })
+        toggleObserving(true)
+      }
+    function resolveInject (inject, vm) {
+        if (inject) {
+          const result = Object.create(null)
+          const keys = Object.keys(inject)  //省略Symbol情况
+      
+          for (let i = 0; i < keys.length; i++) {
+            const key = keys[i]
+            const provideKey = inject[key].from
+            let source = vm
+            while (source) {
+              if (source._provided && hasOwn(source._provided, provideKey)) { //hasOwn为是否有
+                result[key] = source._provided[provideKey]
+                break
+              }
+              source = source.$parent
+            }
+          ... vue@2.5后新增设置inject默认参数相关逻辑
+          }
+          return result
+        }
+      }
+      function initState(vm) {
+        ...
+        const opts = vm.$options
+        if(opts.props) initProps(vm, opts.props)
+        if(opts.methods) initMethods(vm, opts.methods)
+        if(opts.data) initData(vm)
+        ...
+        if(opts.computed) initComputed(vm, opts.computed)
+        if(opts.watch && opts.watch !== nativeWatch) {
+          initWatch(vm, opts.watch)
+        }
+      }
+    // ...
+  }
 initMixin(Vue) // 定义_init方法。
 stateMixin(Vue) // 定义数据相关的方法$set,$delete,$watch方法。
 eventsMixin(Vue) // 定义事件相关的方法$on，$once，$off，$emit。

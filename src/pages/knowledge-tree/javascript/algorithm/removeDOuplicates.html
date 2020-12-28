@@ -7,24 +7,33 @@
 </head>
 <body>
     <script>
-        let a = [1,1,1,2,2,3]
-const removeDuplicates = function(nums) {
-    let i=0; let j=2
-    debugger
-    while(j<nums.length-1) {
-        if(nums[i] === nums[j]){
-            for(x = j;x<nums.length-1; x++) {
-                nums[x] = nums[x+1]
+        window.onload = function () {
+            let a = [2,4]
+           function largestRectangleArea(heights) {
+    let min = Array.from(new Set(heights)).length == 1 ? heights.length*heights[0] : 0
+    
+    let rigth = heights.length
+    let area = 0
+    let maxHight = Math.max(...heights)
+    let noMatchArr = []
+    let witdh = 0
+    let maxWitdh = 0
+    for(let height = 0; height<maxHight; height++) {
+        let last = 0
+        debugger
+        heights.forEach((item, index) => {
+            if(item<height) {
+                area = Math.max(area,(index-last-1)*height)
+                last = index
             }
-            nums.pop()
-        } else {
-            i++
-            j++
-        }
+        })
     }
-    return nums
-    };
-    console.log(removeDuplicates(a));
+    area = Math.max(area,min)
+    return area
+};
+largestRectangleArea(a);
+        }
+        
     </script>
 </body>
 </html>
